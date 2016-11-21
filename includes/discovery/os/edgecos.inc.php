@@ -1,9 +1,8 @@
-#!/usr/bin/env php
 <?php
-/*
- * Copyright (C) 2014  <singh@devilcode.org>
- * Modified and Relicensed by <f0o@devilcode.org> under the expressed
- * permission by the Copyright-Holder <singh@devilcode.org>.
+/**
+ * edgecos.inc.php
+ *
+ * LibreNMS os discovery module for Edgocore OS
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,10 +16,18 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * */
+ *
+ * @package    LibreNMS
+ * @link       http://librenms.org
+ * @copyright  2016 Neil Lathwood
+ * @author     Neil Lathwood <neil@lathwood.co.uk>
+ */
 
-$init_modules = array();
-require __DIR__ . '/includes/init.php';
-error_reporting(E_ERROR);
+$items = array(
+    '.1.3.6.1.4.1.259.6.10.94',
+    '.1.3.6.1.4.1.259.10.1.45.103',
+);
 
-$irc = new LibreNMS\IRCBot();
+if (starts_with($sysObjectId, $items)) {
+    $os = 'edgecos';
+}
