@@ -64,7 +64,7 @@ require $install_dir . '/includes/snmp.inc.php';
 require $install_dir . '/includes/services.inc.php';
 require $install_dir . '/includes/mergecnf.inc.php';
 require $install_dir . '/includes/functions.php';
-
+require $install_dir . '/includes/rewrites.php';
 
 
 if (module_selected('web', $init_modules)) {
